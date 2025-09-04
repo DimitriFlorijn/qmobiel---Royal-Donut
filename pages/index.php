@@ -14,6 +14,6 @@
 <body>
 <!--left align, the overview of donuts (name and price) 
   right top align a serch and Allow toggling sort order (like price a-z and seal of approval)
-  bottom right a add function with: auto id, name seal_of_approval, price, auto create at  -->
+  bottom right a add function with: auto id, name seal_of_approval, price, auto create at  and img-->
 </body>
 </html>
