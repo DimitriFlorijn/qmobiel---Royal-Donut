@@ -17,7 +17,7 @@ header {
   gap: 10px;
   padding-left: 10px;
   background-color: grey;
-  border-bottom: 10px blacl;
+  border-bottom: 2px solid #333;
 }
 header img {
   height: 100px; 

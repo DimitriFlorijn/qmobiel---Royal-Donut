@@ -2,7 +2,7 @@
 
 
 $dbHost = 'localhost';
-$dbName = 'quizz';
+$dbName = 'RoyalDonut';
 $dbUser = 'root';
 $dbPass = '';
 

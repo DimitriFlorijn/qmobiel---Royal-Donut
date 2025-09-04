@@ -7,10 +7,13 @@
   <title>homescreen</title>
   <link rel="stylesheet" href="../styling/main.css">
 </head>
-<body>
-  <header>
+<header>
     <img src="../img/RDLogo.png" alt="RDLogo">
     <h1>Welcome chef : RoyalDonut Kitchen</h1>
   </header>
+<body>
+<!--left align, the overview of donuts (name and price) 
+  right top align a serch and Allow toggling sort order (like price a-z and seal of approval)
+  bottom right a add function with: auto id, name seal_of_approval, price, auto create at  -->
 </body>
 </html>
