@@ -16,19 +16,35 @@
   <div class="donuts">
     <h2>Donut overzicht</h2>
     <form method="get" style="margin-bottom:10px;">
-      <input type="text" name="search" placeholder="Zoek donut..." value="<?= htmlspecialchars($search ?? '') ?>">
-      <select name="sort">
-        <option value="name" <?= isset($sort) && $sort == 'name' ? 'selected' : '' ?>>Naam</option>
-        <option value="price" <?= isset($sort) && $sort == 'price' ? 'selected' : '' ?>>Prijs</option>
-        <option value="seal_of_approval" <?= isset($sort) && $sort == 'seal_of_approval' ? 'selected' : '' ?>>Seal of Approval</option>
-        <option value="created_at" <?= isset($sort) && $sort == 'created_at' ? 'selected' : '' ?>>Datum toegevoegd</option>
-      </select>
-      <select name="order">
-        <option value="asc" <?= isset($order) && $order == 'ASC' ? 'selected' : '' ?>>Oplopend</option>
-        <option value="desc" <?= isset($order) && $order == 'DESC' ? 'selected' : '' ?>>Aflopend</option>
-      </select>
-      <button type="submit">Sorteren / Zoeken</button>
-    </form>
+  <input type="text" name="search" placeholder="Zoek donut..." value="<?= htmlspecialchars($search ?? '') ?>">
+
+  <fieldset>
+    <legend>Sorteren op:</legend>
+    <label>
+      <input type="checkbox" name="sort[]" value="name" <?= isset($sort) && in_array('name', (array)$sort) ? 'checked' : '' ?>>
+      Naam
+    </label>
+    <label>
+      <input type="checkbox" name="sort[]" value="price" <?= isset($sort) && in_array('price', (array)$sort) ? 'checked' : '' ?>>
+      Prijs
+    </label>
+    <label>
+      <input type="checkbox" name="sort[]" value="seal_of_approval" <?= isset($sort) && in_array('seal_of_approval', (array)$sort) ? 'checked' : '' ?>>
+      Seal of Approval
+    </label>
+    <label>
+      <input type="checkbox" name="sort[]" value="created_at" <?= isset($sort) && in_array('created_at', (array)$sort) ? 'checked' : '' ?>>
+      Datum toegevoegd
+    </label>
+  </fieldset>
+
+  <select name="order">
+    <option value="asc" <?= isset($order) && $order == 'asc' ? 'selected' : '' ?>>Oplopend</option>
+    <option value="desc" <?= isset($order) && $order == 'desc' ? 'selected' : '' ?>>Aflopend</option>
+  </select>
+
+  <button type="submit">Sorteren / Zoeken</button>
+</form>
 
     <div class="donut-list">
       <?php if (!empty($donuts)): ?>
