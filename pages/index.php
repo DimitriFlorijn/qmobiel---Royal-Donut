@@ -1,3 +1,4 @@
+<?php include "../backend/conn.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +65,7 @@
 
   <div class="form-container">
     <h2>Nieuwe Donut toevoegen</h2>
-    <form action="add_donut.php" method="post" enctype="multipart/form-data">
+    <form action="index.php" method="post" enctype="multipart/form-data">
       <label>Naam:</label><br>
       <input type="text" name="name" required><br><br>
 
