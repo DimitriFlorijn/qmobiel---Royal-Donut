@@ -19,7 +19,6 @@ header {
 header img {
   height: 100px; 
 }
-footer { grid-column: span 2; text-align: center; }
 
 .donuts { 
   border: 1px solid #ccc;
@@ -34,13 +33,6 @@ footer { grid-column: span 2; text-align: center; }
    background-color: white;
 
  }
-.donut img { 
-  width: 60px; 
-  height: 60px; object-fit: cover;
-   border-radius: 8px;
-   background-color: white;
-
-   }
 .form-container { 
   border: 1px solid #ccc; 
   padding: 15px; 
@@ -48,3 +40,4 @@ footer { grid-column: span 2; text-align: center; }
   background-color: white;
 
  }
+ footer { grid-column: span 2; text-align: center; }

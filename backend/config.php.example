@@ -37,3 +37,6 @@ INSERT INTO dessert (id, name, seal_of_approval, price, created_at) VALUES
 (13, 'Mint Majesty', 5, 9.10, '2025-06-12 10:13:15'),
 (14, 'Berry Bliss', 3, 7.50, '2025-06-12 10:13:15'),
 (15, 'Golden Honeycomb', 4, 8.40, '2025-06-12 10:13:15');
+
+ALTER TABLE desserts
+MODIFY created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
