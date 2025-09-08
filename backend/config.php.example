@@ -1,0 +1,39 @@
+<?php
+## for running the database local, here your own login
+## run the sql code at the bottom once for the db table and the base data for in it
+
+$dbHost = 'localhost';
+$dbName = 'royaldonut';
+$dbUser = 'root';
+$dbPass = '';
+
+$base_url = 'http://localhost/royaldonut';
+
+?>
+
+
+CREATE TABLE dessert (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    seal_of_approval INT CHECK (seal_of_approval BETWEEN 1 AND 5),
+    price DECIMAL(4,2) NOT NULL,
+    created_at TIMESTAMP NOT NULL
+);
+
+
+INSERT INTO dessert (id, name, seal_of_approval, price, created_at) VALUES
+(1, 'Moonlit Meringue', 4, 8.00, '2025-06-12 10:13:15'),
+(2, 'Unicorn Rainbow', 5, 9.50, '2025-06-12 10:13:15'),
+(3, 'Starlight Sprinkle', 3, 7.00, '2025-06-12 10:13:15'),
+(4, 'Sunfire Glaze', 5, 8.50, '2025-06-12 10:13:15'),
+(5, 'Dragon’s Breath', 4, 9.00, '2025-06-12 10:13:15'),
+(6, 'Velvet Crème', 2, 6.50, '2025-06-12 10:13:15'),
+(7, 'Aurora Swirl', 4, 8.20, '2025-06-12 10:13:15'),
+(8, 'Midnight Cocoa', 3, 7.80, '2025-06-12 10:13:15'),
+(9, 'Royal Raspberry', 5, 9.20, '2025-06-12 10:13:15'),
+(10, 'Lemon Mist', 3, 7.30, '2025-06-12 10:13:15'),
+(11, 'Caramel Crown', 4, 8.70, '2025-06-12 10:13:15'),
+(12, 'Cherry Blossom', 2, 6.90, '2025-06-12 10:13:15'),
+(13, 'Mint Majesty', 5, 9.10, '2025-06-12 10:13:15'),
+(14, 'Berry Bliss', 3, 7.50, '2025-06-12 10:13:15'),
+(15, 'Golden Honeycomb', 4, 8.40, '2025-06-12 10:13:15');
