@@ -1,4 +1,6 @@
-<?php include "../backend/conn.php"; ?>
+<?php
+include '../backend/conn.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,41 +22,47 @@
   <input type="text" name="search" placeholder="Zoek donut..." value="<?= htmlspecialchars($search ?? '') ?>">
 
   <fieldset>
-    <legend>Sorteren op:</legend>
-    <label>
-      <input type="checkbox" name="sort[]" value="name" <?= isset($sort) && in_array('name', (array)$sort) ? 'checked' : '' ?>>
-      Naam
-    </label>
-    <label>
-      <input type="checkbox" name="sort[]" value="price" <?= isset($sort) && in_array('price', (array)$sort) ? 'checked' : '' ?>>
-      Prijs
-    </label>
-    <label>
-      <input type="checkbox" name="sort[]" value="seal_of_approval" <?= isset($sort) && in_array('seal_of_approval', (array)$sort) ? 'checked' : '' ?>>
-      Seal of Approval
-    </label>
-    <label>
-      <input type="checkbox" name="sort[]" value="created_at" <?= isset($sort) && in_array('created_at', (array)$sort) ? 'checked' : '' ?>>
-      Datum toegevoegd
-    </label>
-  </fieldset>
+  <legend>Sorteren op:</legend>
+  <label>
+    <input type="checkbox" name="sort[]" value="name" <?= isset($sort) && in_array('name', (array)$sort) ? 'checked' : '' ?>>
+    Naam
+  </label>
+  <label>
+    <input type="checkbox" name="sort[]" value="price" <?= isset($sort) && in_array('price', (array)$sort) ? 'checked' : '' ?>>
+    Prijs
+  </label>
+  <label>
+    | Seal of Approval:
+    <select name="seal_of_approval">
+      <option value=""> Kies een waarde </option>
+      <option value="1" <?= isset($seal_of_approval) && $seal_of_approval == '1' ? 'selected' : '' ?>>1</option>
+      <option value="2" <?= isset($seal_of_approval) && $seal_of_approval == '2' ? 'selected' : '' ?>>2</option>
+      <option value="3" <?= isset($seal_of_approval) && $seal_of_approval == '3' ? 'selected' : '' ?>>3</option>
+      <option value="4" <?= isset($seal_of_approval) && $seal_of_approval == '4' ? 'selected' : '' ?>>4</option>
+      <option value="5" <?= isset($seal_of_approval) && $seal_of_approval == '5' ? 'selected' : '' ?>>5</option>
+    </select>
+  </label>
+  <label>
+    <input type="checkbox" name="sort[]" value="created_at" <?= isset($sort) && in_array('created_at', (array)$sort) ? 'checked' : '' ?>>
+    Datum toegevoegd
+  </label>
+</fieldset>
 
   <select name="order">
     <option value="asc" <?= isset($order) && $order == 'asc' ? 'selected' : '' ?>>Oplopend</option>
     <option value="desc" <?= isset($order) && $order == 'desc' ? 'selected' : '' ?>>Aflopend</option>
   </select>
-
   <button type="submit">Sorteren / Zoeken</button>
 </form>
-
     <div class="donut-list">
-      <?php if (!empty($donuts)): ?>
-        <?php foreach ($donuts as $donut): ?>
+      
+      <?php if (!empty($desserts)): 
+        foreach ($desserts as $dessert): ?>
           <div class="donut-item">
-            <h3><?= htmlspecialchars($donut['name']) ?></h3>
-            <p>Prijs: €<?= number_format($donut['price'], 2) ?></p>
-            <p>Seal of Approval: <?= htmlspecialchars($donut['seal_of_approval']) ?>/5</p>
-            <p>Toegevoegd op: <?= htmlspecialchars($donut['created_at']) ?></p>
+            <h3><?= htmlspecialchars($dessert['name']) ?></h3>
+            <p>Prijs: €<?= number_format($dessert['price'], 2) ?></p>
+            <p>Seal of Approval: <?= htmlspecialchars($dessert['seal_of_approval']) ?>/5</p>
+            <p>Toegevoegd op: <?= htmlspecialchars($dessert['created_at']) ?></p>
           </div>
         <?php endforeach; ?>
       <?php else: ?>
